@@ -1,0 +1,5 @@
+/*
+ * Devicetree-Overlay für den Proof of Concept auf dem nRF54L15 DK.
+ * Hier werden die Breakout-Boards (Sensor, Flash) an SPI/I²C und GPIOs angebunden.
+ * Ausgefüllt von AP2 (Sensor) und AP3 (Flash).
+ */

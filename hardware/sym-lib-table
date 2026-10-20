@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "CAP_Power")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP_Power.kicad_sym")(options "")(descr "AP1 Energieversorgung"))
+  (lib (name "CAP_Digital")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP_Digital.kicad_sym")(options "")(descr "AP2 Sensor und Mikrocontroller"))
+  (lib (name "CAP_Memory")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP_Memory.kicad_sym")(options "")(descr "AP3 Speicher"))
+)

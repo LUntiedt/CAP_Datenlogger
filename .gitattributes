@@ -1,0 +1,28 @@
+# Zeilenenden vereinheitlichen
+* text=auto
+
+# KiCad-Dateien sind Text
+*.kicad_pro text
+*.kicad_sch text
+*.kicad_pcb text
+*.kicad_sym text
+*.kicad_mod text
+
+# Binärdateien
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.docx binary
+*.zip  binary
+*.step binary
+*.stp  binary
+*.stl  binary
+
+# ---------- Git LFS ----------
+# Erst aktivieren, wenn geklärt ist, dass die GitLab-Instanz LFS anbietet (AP0)
+# und alle `git lfs install` ausgeführt haben. Dann die # entfernen:
+# *.pdf  filter=lfs diff=lfs merge=lfs -text
+# *.step filter=lfs diff=lfs merge=lfs -text
+# *.stp  filter=lfs diff=lfs merge=lfs -text
+# *.stl  filter=lfs diff=lfs merge=lfs -text
+# measurements/data/** filter=lfs diff=lfs merge=lfs -text

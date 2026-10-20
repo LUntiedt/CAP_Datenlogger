@@ -1,0 +1,43 @@
+# ---------- KiCad ----------
+*-backups/
+*.kicad_prl
+fp-info-cache
+*.lck
+~*.lck
+\#auto_saved_files\#
+_autosave-*
+*.bak
+*-bak
+*-cache.lib
+*-rescue.*
+# lose Fertigungsausgaben (Freigabestände gehören nach hardware/production/vX.Y/)
+hardware/*.gbr
+hardware/*.drl
+hardware/*.gbrjob
+hardware/*.pos
+hardware/*.zip
+hardware/gerbers/
+
+# ---------- Firmware (Zephyr / NCS) ----------
+build/
+build_*/
+firmware/build*/
+compile_commands.json
+
+# ---------- Python ----------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---------- Dokumente ----------
+docs/spec/export/
+~$*
+
+# ---------- Editor / OS ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log
