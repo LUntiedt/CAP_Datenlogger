@@ -1,9 +1,9 @@
 ---
 title: "Pflichtenheft"
 subtitle: "Miniaturisierter Beschleunigungs-Datenlogger für Tiere"
-version: "0.1 (Entwurf)"
-date: "17.10.2026"
-author: "Laurenz Untiedt, [Name 2], [Name 3], [Name 4], [Name 5]"
+version: "0.2 (Entwurf)"
+date: "21.10.2026"
+author: "Laurenz Untiedt, Simon Schiefer, Peter Wienken, Erik Bremersmann, Jan Thiedmann"
 lang: de-DE
 toc-title: "Inhaltsverzeichnis"
 course: "Capstone-Projekt (CAP) – Prof. Dr. Markus Cremer – WS 26/27 – TH Köln"
@@ -12,14 +12,15 @@ course: "Capstone-Projekt (CAP) – Prof. Dr. Markus Cremer – WS 26/27 – TH 
 # Pflichtenheft – Miniaturisierter Beschleunigungs-Datenlogger für Tiere
 
 Capstone-Projekt (CAP) · Prof. Dr. Markus Cremer · WS 26/27 · TH Köln\
-Version 0.1 (Entwurf) · 17.10.2026\
-Erstellt von: Laurenz Untiedt, [Name 2], [Name 3], [Name 4], [Name 5]
+Version 0.2 (Entwurf) · 21.10.2026\
+Erstellt von: Laurenz Untiedt, Simon Schiefer, Peter Wienken, Erik Bremersmann, Jan Thiedmann
 
 ## A Änderungsprotokoll
 
 | Version | Änderungen | Datum | Geändert von |
 |---|---|---|---|
 | 0.1 | Vorläufiges Pflichtenheft auf Basis des Lastenhefts 0.1; Mikrocontroller nRF54L15 festgelegt, übrige Bauteile als Kandidaten | 17.10.2026 | LU |
+| 0.2 | Teammitglieder ergänzt; Entwurf zur Abstimmung mit dem Auftraggeber | 21.10.2026 | LU |
 
 ## C Glossar
 
@@ -41,12 +42,12 @@ Entwickelt wird ein Prototyp eines miniaturisierten, batteriebetriebenen Datenlo
 
 Datenbasis:
 
-- Lastenheft „Miniaturisierter Beschleunigungs-Datenlogger für Tiere“, Version 0.1, Stand 17.10.2026 ([lastenheft.md](lastenheft.md))
+- Lastenheft „Miniaturisierter Beschleunigungs-Datenlogger für Tiere“, Version 0.2, Stand 21.10.2026 ([lastenheft.md](lastenheft.md))
 - Themenbeschreibung „Miniaturised Battery-Powered Acceleration Data Logger for Animal-Borne Field Measurements“, ERTS Lab, Stand Oktober 2026 ([themenbeschreibung.md](themenbeschreibung.md))
 - Absprachen mit Prof. Dr. Markus Cremer (E-Mail vom [Datum], Gespräch zur Wahl des Mikrocontrollers)
 - Modulhandbuch BaET2020, Modul CAP
 
-> **Stand:** Version 0.1 ist vorläufig. Zielwerte und Bauteile werden bis Meilenstein M1 hergeleitet bzw. ausgewählt und in Version 1.0 eingetragen.
+> **Stand:** Version 0.2 ist vorläufig. Zielwerte und Bauteile werden bis Meilenstein M1 hergeleitet bzw. ausgewählt und in Version 1.0 eingetragen.
 
 ## 2 Einführung
 
@@ -187,16 +188,16 @@ Die Daten werden blockweise mit Zeitstempel und Prüfsumme abgelegt, damit ein S
 
 ### 4.1 Arbeitspakete
 
-Jede Person verantwortet einen Funktionsblock von der Bauteilauswahl über das eigene Schaltplanblatt bis zur zugehörigen Firmware bzw. Validierung. AP4 führt die Schaltplanblätter zusammen und prüft sie.
+Jedes Arbeitspaket AP1–AP5 verantwortet einen Funktionsblock von der Bauteilauswahl über das eigene Schaltplanblatt bis zur zugehörigen Firmware bzw. Validierung. AP1, AP3 und AP4 werden von je einer Person verantwortet, AP2 und AP5 gemeinsam von zwei Personen. AP4 führt die Schaltplanblätter zusammen und prüft sie.
 
 | AP | Arbeitspaket | Inhalt / Ergebnis | Verantwortlich |
 |---|---|---|---|
 | AP0 | Anforderungen und Organisation | Offene Punkte klären, Zielwerte herleiten (Abschnitt 2.1), Repository, Zeitplan, Stakeholder-Interview | alle |
-| AP1 | Energieversorgung | Zellauswahl, Pufferung, Energiebudget, Schaltplanblatt inkl. Messshunt, Power-Management-Firmware, Strom- und Laufzeitmessung | [Name 1] |
-| AP2 | Sensor und Mikrocontroller | Sensor-, Antennen- und Weckauswahl, Schaltplanblatt Digitalteil, Firmware-Basis (Sensortreiber, FIFO, Zeitstempel, Zustandsautomat) | [Name 2] |
-| AP3 | Speicher und Datenübertragung | Speicherauswahl, Datenformat, Schaltplanblatt Speicher, Firmware für Datenablage und BLE-Download, PC-Auslesewerkzeug | [Name 3] |
+| AP1 | Energieversorgung | Zellauswahl, Pufferung, Energiebudget, Schaltplanblatt inkl. Messshunt, Power-Management-Firmware, Strom- und Laufzeitmessung | Simon Schiefer |
+| AP2 | Sensor und Mikrocontroller | Sensor-, Antennen- und Weckauswahl, Schaltplanblatt Digitalteil, Firmware-Basis (Sensortreiber, FIFO, Zeitstempel, Zustandsautomat) | Peter Wienken, Erik Bremersmann |
+| AP3 | Speicher und Datenübertragung | Speicherauswahl, Datenformat, Schaltplanblatt Speicher, Firmware für Datenablage und BLE-Download, PC-Auslesewerkzeug | Jan Thiedmann |
 | AP4 | Leiterplatte | Zusammenführung und Review der Schaltplanblätter, Layout, Fertigungsdaten, Bestückung, Inbetriebnahme | Laurenz Untiedt |
-| AP5 | Gehäuse und Validierung | Gehäuse und Befestigung, mechanische Tests, Signalqualität, Praxisaufnahme | [Name 5] |
+| AP5 | Gehäuse und Validierung | Gehäuse und Befestigung, mechanische Tests, Signalqualität, Praxisaufnahme | Peter Wienken, Erik Bremersmann |
 | AP6 | Abschluss | Projektbericht, Poster/Handout oder Extended Abstract, Präsentation | alle |
 
 ### 4.2 Zeitplan

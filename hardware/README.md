@@ -58,7 +58,7 @@ lose Gerber-/ZIP-Dateien. Siehe `.gitignore`.
 
 ## Freigabe (M2)
 
-1. ERC und DRC ohne Fehler, Review per MR.
+1. ERC und DRC ohne Fehler, Review per MR/PR.
 2. Gerber, Bohrdaten, Bestückdaten und BOM nach `production/vX.Y/` exportieren.
 3. Commit + Git-Tag `hw-vX.Y`.
 

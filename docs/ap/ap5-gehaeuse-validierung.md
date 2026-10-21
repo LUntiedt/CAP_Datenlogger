@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Verantwortlich** | [Name 5] |
+| **Verantwortlich** | Peter Wienken, Erik Bremersmann |
 | **Zeitraum** | W2–W6 (Gehäuse), W8–W10 (Validierung) |
 | **Bezug** | F3, F9, NF1, NF2, NF5 · Pflichtenheft 3.1, 2.5 (Validierung) |
 | **Dateien** | `hardware/enclosure/`, `measurements/` |

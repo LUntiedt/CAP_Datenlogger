@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Verantwortlich** | [Name 2] |
+| **Verantwortlich** | Peter Wienken, Erik Bremersmann |
 | **Zeitraum** | W1–W7 |
 | **Bezug** | F1, F2, F3, F8, F9, F10 · Pflichtenheft 3.2.1 (MCU, Antenne, Sensor, Weckmechanismus), 3.3, 3.4 |
 | **Schaltplanblatt** | `hardware/digital.kicad_sch` · Symbole in `hardware/lib/CAP_Digital.kicad_sym` |
@@ -36,7 +36,7 @@ Forschungsfrage aus der Themenbeschreibung, die hier (mit AP0) beantwortet wird:
 
 - [ ] `digital.kicad_sch`: nRF54L15 (bzw. Modul) mit Beschaltung laut Referenzdesign, 32,768-kHz-Quarz, Sensor mit Interrupt-Leitung, Weckquelle, SWD-Anschluss, ggf. Status-LED
 - [ ] Pinbelegung mit AP3 (SPI für Flash) und AP1 (Batteriemessung) abstimmen und in `docs/architecture/system.md` dokumentieren
-- [ ] Symbole/Footprints in `CAP_Digital.kicad_sym` bzw. `CAP.pretty`; ERC ohne Fehler; MR an AP4
+- [ ] Symbole/Footprints in `CAP_Digital.kicad_sym` bzw. `CAP.pretty`; ERC ohne Fehler; MR/PR an AP4
 
 ### Bis M3 – Firmware-Basis (zuerst auf dem DK mit Breakout-Board)
 

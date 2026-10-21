@@ -7,11 +7,11 @@ Arbeitssitzung zusammen mit der KI.
 | AP | Datei | Verantwortlich |
 |---|---|---|
 | AP0 | [ap0-organisation.md](ap0-organisation.md) | alle |
-| AP1 | [ap1-energie.md](ap1-energie.md) | [Name 1] |
-| AP2 | [ap2-sensor-mcu.md](ap2-sensor-mcu.md) | [Name 2] |
-| AP3 | [ap3-speicher-ble.md](ap3-speicher-ble.md) | [Name 3] |
+| AP1 | [ap1-energie.md](ap1-energie.md) | Simon Schiefer |
+| AP2 | [ap2-sensor-mcu.md](ap2-sensor-mcu.md) | Peter Wienken, Erik Bremersmann |
+| AP3 | [ap3-speicher-ble.md](ap3-speicher-ble.md) | Jan Thiedmann |
 | AP4 | [ap4-leiterplatte.md](ap4-leiterplatte.md) | Laurenz Untiedt |
-| AP5 | [ap5-gehaeuse-validierung.md](ap5-gehaeuse-validierung.md) | [Name 5] |
+| AP5 | [ap5-gehaeuse-validierung.md](ap5-gehaeuse-validierung.md) | Peter Wienken, Erik Bremersmann |
 | AP6 | [ap6-abschluss.md](ap6-abschluss.md) | alle |
 
 ## Aufbau jeder AP-Datei

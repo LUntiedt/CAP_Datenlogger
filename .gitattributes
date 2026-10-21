@@ -19,7 +19,8 @@
 *.stl  binary
 
 # ---------- Git LFS ----------
-# Erst aktivieren, wenn geklärt ist, dass die GitLab-Instanz LFS anbietet (AP0)
+# Erst aktivieren, wenn geklärt ist, ob und in welchem Umfang LFS auf GitHub
+# (bzw. später ggf. GitLab der TH) genutzt werden kann (AP0)
 # und alle `git lfs install` ausgeführt haben. Dann die # entfernen:
 # *.pdf  filter=lfs diff=lfs merge=lfs -text
 # *.step filter=lfs diff=lfs merge=lfs -text

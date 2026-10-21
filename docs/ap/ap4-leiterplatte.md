@@ -23,7 +23,7 @@ gefertigt, bestückt und in Betrieb genommen.
 
 ### Bis M2 – Zusammenführung und Layout
 
-- [ ] Schaltplanblätter von AP1, AP2, AP3 reviewen (MR), Netznamen und Schnittstellen zwischen den Blättern prüfen
+- [ ] Schaltplanblätter von AP1, AP2, AP3 reviewen (MR/PR), Netznamen und Schnittstellen zwischen den Blättern prüfen
 - [ ] ERC des Gesamtschaltplans ohne Fehler
 - [ ] Layout: minimale Fläche und Masse, Antennenbereich frei von Kupfer/Metall, Messshunt und Testpunkte zugänglich, SWD erreichbar, Achsrichtungen des Sensors im Bestückungsdruck
 - [ ] DRC ohne Fehler, Review mit mindestens einer weiteren Person

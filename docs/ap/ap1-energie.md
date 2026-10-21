@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Verantwortlich** | [Name 1] |
+| **Verantwortlich** | Simon Schiefer |
 | **Zeitraum** | W1–W3, W5–W6, W8–W9 |
 | **Bezug** | NF3, NF4 · Pflichtenheft 3.2, 3.2.1 (Energiespeicher, Pufferung), 3.2.2 (Tabelle 1) |
 | **Schaltplanblatt** | `hardware/power.kicad_sch` · Symbole in `hardware/lib/CAP_Power.kicad_sym` |
@@ -36,7 +36,7 @@ Forschungsfragen aus der Themenbeschreibung, die hier beantwortet werden:
 
 - [ ] `power.kicad_sch` zeichnen: Zellenhalter, Verpolschutz falls nötig, Pufferkapazität, Messshunt mit Jumper/Testpunkten, ggf. Batteriespannungsmessung (Spannungsteiler mit schaltbarem Pfad o. Ä.)
 - [ ] Symbole/Footprints in `CAP_Power.kicad_sym` bzw. `CAP.pretty` anlegen
-- [ ] ERC ohne Fehler, MR an AP4
+- [ ] ERC ohne Fehler, MR/PR an AP4
 
 ### Bis M3 – Firmware
 

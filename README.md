@@ -19,9 +19,9 @@ Analyse der Gangperiodizität.
 
 ## Einstieg
 
-1. Repository klonen:
+1. Repository klonen (vorerst GitHub, später ggf. GitLab der TH):
    ```bash
-   git clone <GitLab-URL> cap-datenlogger
+   git clone https://github.com/LUntiedt/CAP_Datenlogger.git cap-datenlogger
    cd cap-datenlogger
    ```
 2. [`AGENTS.md`](AGENTS.md) lesen – Arbeitsregeln für Team und KI.

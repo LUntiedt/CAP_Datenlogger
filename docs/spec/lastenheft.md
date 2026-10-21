@@ -1,9 +1,9 @@
 ---
 title: "Lastenheft"
 subtitle: "Miniaturisierter Beschleunigungs-Datenlogger für Tiere"
-version: "0.1 (Entwurf)"
-date: "17.10.2026"
-author: "Laurenz Untiedt, [Name 2], [Name 3], [Name 4], [Name 5]"
+version: "0.2 (Entwurf)"
+date: "21.10.2026"
+author: "Laurenz Untiedt, Simon Schiefer, Peter Wienken, Erik Bremersmann, Jan Thiedmann"
 lang: de-DE
 toc-title: "Inhaltsverzeichnis"
 course: "Capstone-Projekt (CAP) – Prof. Dr. Markus Cremer – WS 26/27 – TH Köln"
@@ -12,14 +12,15 @@ course: "Capstone-Projekt (CAP) – Prof. Dr. Markus Cremer – WS 26/27 – TH 
 # Lastenheft – Miniaturisierter Beschleunigungs-Datenlogger für Tiere
 
 Capstone-Projekt (CAP) · Prof. Dr. Markus Cremer · WS 26/27 · TH Köln\
-Version 0.1 (Entwurf) · 17.10.2026\
-Erstellt von: Laurenz Untiedt, [Name 2], [Name 3], [Name 4], [Name 5]
+Version 0.2 (Entwurf) · 21.10.2026\
+Erstellt von: Laurenz Untiedt, Simon Schiefer, Peter Wienken, Erik Bremersmann, Jan Thiedmann
 
 ## A Änderungsprotokoll
 
 | Version | Änderungen | Datum | Geändert von |
 |---|---|---|---|
 | 0.1 | Erstellung des initialen Lastenhefts auf Basis der Themenbeschreibung des ERTS Lab | 17.10.2026 | LU |
+| 0.2 | Teammitglieder ergänzt; Entwurf zur Abstimmung mit dem Auftraggeber | 21.10.2026 | LU |
 
 ## 1 Einführung
 

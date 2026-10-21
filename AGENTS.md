@@ -73,7 +73,7 @@ gezielt das, was für die Aufgabe nötig ist.
 3. Arbeiten. Größere Schritte vorher kurz erklären lassen bzw. erklären.
 4. **Vor dem Commit:** eigene AP-Datei aktualisieren (Abschnitt „Stand“, Checkboxen,
    offene Fragen). Wurde etwas entschieden → neue Datei in `docs/decisions/`.
-5. Commit, Push, Merge Request nach `main`.
+5. Commit, Push, Merge Request bzw. Pull Request nach `main`.
 
 Abkürzung für Schritt 4: `/session-end` (Claude Code) bzw. „Führe `docs/prompts/session-end.md` aus“ (Codex).
 
@@ -84,9 +84,9 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
 
 | Datei/Ordner | Wer ändert |
 |---|---|
-| `docs/ap/apN-*.md` | Verantwortliche/r des AP (andere nur über Kommentar im MR) |
+| `docs/ap/apN-*.md` | Verantwortliche/r des AP (andere nur über Kommentar im MR/PR) |
 | `STATUS.md` | Laurenz Untiedt, nach Teamterminen und Meilensteinen (`/status-update`) |
-| `docs/spec/*` | nur per MR mit Versionssprung und Eintrag im Änderungsprotokoll |
+| `docs/spec/*` | nur per MR/PR mit Versionssprung und Eintrag im Änderungsprotokoll |
 | `docs/decisions/*` | jede/r; einmal angenommene Entscheidungen werden nicht umgeschrieben, sondern durch eine neue ersetzt |
 | Schaltplanblatt + Symbolbibliothek eines Blocks | Verantwortliche/r des Blocks (siehe Abschnitt 7) |
 | `hardware/*.kicad_pcb`, Root-Schaltplan | AP4 |
@@ -105,7 +105,7 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
   erklären können. Die KI erklärt deshalb vor nicht trivialem Code bzw. Schaltungsteilen
   kurz die Logik und die Alternativen; nichts übernehmen, was man nicht erklären kann.
 - **Keine Anforderungen erfinden.** Unklares als offene Frage in die AP-Datei eintragen.
-- **Nicht in fremden Bereichen arbeiten**, ohne es im MR zu nennen (siehe Abschnitt 5).
+- **Nicht in fremden Bereichen arbeiten**, ohne es im MR/PR zu nennen (siehe Abschnitt 5).
 - **Diagramme im Pflichtenheft sind Entwürfe.** Abbildung 1 und 2 zeigen eine mögliche
   Umsetzung, keine Vorgabe. Verbindlich sind die Anforderungen und die ADRs.
 
@@ -117,16 +117,16 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
 
   | Blatt | Inhalt | Verantwortlich | Symbolbibliothek |
   |---|---|---|---|
-  | `power.kicad_sch` | Zelle, Pufferung, Messshunt, Testpunkte | AP1 | `lib/CAP_Power.kicad_sym` |
-  | `digital.kicad_sch` | nRF54L15, Sensor, Antenne, Weckquelle, Quarz, SWD | AP2 | `lib/CAP_Digital.kicad_sym` |
-  | `memory.kicad_sch` | Flash-Speicher | AP3 | `lib/CAP_Memory.kicad_sym` |
-  | Root-Blatt + `.kicad_pcb` | Zusammenführung, Layout | AP4 | – |
+  | `power.kicad_sch` | Zelle, Pufferung, Messshunt, Testpunkte | AP1 (Simon Schiefer) | `lib/CAP_Power.kicad_sym` |
+  | `digital.kicad_sch` | nRF54L15, Sensor, Antenne, Weckquelle, Quarz, SWD | AP2 (Peter Wienken, Erik Bremersmann) | `lib/CAP_Digital.kicad_sym` |
+  | `memory.kicad_sch` | Flash-Speicher | AP3 (Jan Thiedmann) | `lib/CAP_Memory.kicad_sym` |
+  | Root-Blatt + `.kicad_pcb` | Zusammenführung, Layout | AP4 (Laurenz Untiedt) | – |
 
 - **Bibliotheken projektlokal** unter `hardware/lib/`, eingebunden über `${KIPRJMOD}`
   in `sym-lib-table`/`fp-lib-table`. Keine Bauteile aus persönlichen Bibliotheken.
   Footprints liegen gemeinsam in `lib/CAP.pretty/` (eine Datei pro Footprint),
   3D-Modelle in `lib/3d/`.
-- **Review:** Jedes Schaltplanblatt, jede Bibliotheksänderung und das Layout gehen per MR
+- **Review:** Jedes Schaltplanblatt, jede Bibliotheksänderung und das Layout gehen per MR/PR
   an AP4 (Laurenz Untiedt).
 - **Fertigungsdaten** (Gerber, Bohrdaten, Bestückdaten, BOM) nur bei Freigabe unter
   `hardware/production/vX.Y/`, nicht lose im Projektordner.
@@ -146,9 +146,11 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
   eine Funktion. Nie einen ganzen ungetesteten Treiber auf einmal.
 - Details: `docs/architecture/firmware.md`, `firmware/README.md`.
 
-## 9. Git und Merge Requests
+## 9. Git und Merge Requests bzw. Pull Requests
 
-- `main` ist geschützt; Änderungen nur per Merge Request mit mindestens einem Review.
+- **Hosting:** vorerst GitHub (https://github.com/LUntiedt/CAP_Datenlogger), später ggf. GitLab der TH.
+  „MR/PR“ steht für Merge Request (GitLab) bzw. Pull Request (GitHub).
+- `main` ist geschützt; Änderungen nur per MR/PR mit mindestens einem Review.
   Hardware-Review durch AP4, sonst durch eine zweite Person aus dem Team.
 - **Branches:** `<typ>/<ap>-<kurz>`, z. B. `feat/ap2-fifo-auslesen`, `docs/ap1-zellauswahl`,
   `hw/ap3-flash-schaltplan`. Kurzlebig, ein Thema pro Branch.
@@ -179,4 +181,4 @@ Eine Aufgabe ist fertig, wenn
 - verwendete Datenblattwerte belegt sind,
 - die AP-Datei aktualisiert und Entscheidungen als ADR festgehalten sind,
 - die verantwortliche Person das Ergebnis erklären kann,
-- der MR reviewt und nach `main` gemergt ist.
+- der MR/PR reviewt und nach `main` gemergt ist.

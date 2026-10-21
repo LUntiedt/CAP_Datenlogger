@@ -16,14 +16,15 @@ gemeinsamen Repository.
 
 ### Bis M0 – Organisation
 
-- [ ] Kickoff: APs verteilen, Namen in `docs/ap/*.md`, `STATUS.md`, Lasten- und Pflichtenheft eintragen
-- [ ] Repository auf GitLab der TH anlegen, `main` schützen (MR + 1 Approval), alle Mitglieder hinzufügen
-- [ ] Prüfen, ob die GitLab-Instanz **Git LFS** anbietet → Ergebnis in `.gitattributes` umsetzen (siehe Kommentar dort)
+- [x] Kickoff: APs verteilen, Namen in `docs/ap/*.md`, `STATUS.md`, Lasten- und Pflichtenheft eintragen
+- [x] Repository anlegen (vorerst GitHub: https://github.com/LUntiedt/CAP_Datenlogger, später ggf. GitLab der TH), `main` schützen (MR/PR + 1 Approval)
+- [ ] Alle Mitglieder zum Repository hinzufügen
+- [ ] Klären, ob und in welchem Umfang **Git LFS** auf GitHub genutzt werden kann (Kontingent des Kontos) → Ergebnis in `.gitattributes` umsetzen (siehe Kommentar dort)
 - [ ] **KiCad-Version** festlegen und in `AGENTS.md` Abschnitt 7 eintragen
 - [ ] **nRF-Connect-SDK-Version** festlegen und in `AGENTS.md` Abschnitt 8 eintragen
 - [ ] Jede/r: KiCad, nRF Connect for VS Code, Git, Python installieren; Repo klonen; Firmware-Skelett für das DK bauen (`firmware/README.md`)
 - [ ] O7 klären: Termine des Capstone-Projekts → Meilensteindaten in Lastenheft 8 und `STATUS.md`
-- [ ] Lasten- und Pflichtenheft gemeinsam lesen, Anmerkungen per MR, Freigabe durch Prof. Cremer (M0)
+- [ ] Lasten- und Pflichtenheft gemeinsam lesen, Anmerkungen per MR/PR, Freigabe durch Prof. Cremer (M0)
 
 ### Bis M1 – Zielwerte
 
@@ -48,7 +49,7 @@ gemeinsamen Repository.
 
 ## Stand
 
-Repository-Struktur erstellt; Lasten- und Pflichtenheft 0.1 als Markdown übernommen.
+Repository-Struktur erstellt und auf GitHub angelegt; APs verteilt und Namen eingetragen; Lasten- und Pflichtenheft 0.2 zur Abstimmung mit dem Auftraggeber.
 
 ## Offene Fragen
 
@@ -57,3 +58,4 @@ Repository-Struktur erstellt; Lasten- und Pflichtenheft 0.1 als Markdown überno
 ## Log
 
 - 19.10.2026: Repository-Struktur angelegt.
+- 21.10.2026: Teammitglieder eingetragen, Repository auf GitHub, Lasten- und Pflichtenheft auf 0.2.
