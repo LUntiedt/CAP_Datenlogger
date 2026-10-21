@@ -1,25 +1,19 @@
 #!/usr/bin/env bash
-# Erzeugt .docx (und optional .pdf) aus den Markdown-Spezifikationen.
-# Voraussetzung: pandoc (macOS: brew install pandoc). Für PDF zusätzlich LibreOffice.
-# Aufruf aus beliebigem Ordner:  docs/spec/export.sh          -> nur docx
-#                                docs/spec/export.sh --pdf    -> docx + pdf
+# Erzeugt Lasten- und Pflichtenheft als .docx (optional zusätzlich .pdf) aus den
+# Markdown-Quellen in diesem Ordner.
+#
+# Voraussetzungen: pandoc (Installer: github.com/jgm/pandoc/releases) und python3.
+# Für --pdf zusätzlich LibreOffice. Besser: .docx in Word öffnen und dort als PDF speichern.
+#
+# Aufruf:  docs/spec/export.sh          -> export/lastenheft.docx, export/pflichtenheft.docx
+#          docs/spec/export.sh --pdf    -> zusätzlich PDF
+#
+# Layout (Deckblatt, Kopf-/Fußzeile, Tabellen) kommt aus vorlage/<dokument>-vorlage.docx,
+# der Inhalt aus <dokument>.md. Umsetzung: build_docx.py.
 # Ergebnis liegt in docs/spec/export/ (wird nicht committet, siehe .gitignore).
 set -euo pipefail
 cd "$(dirname "$0")"
-mkdir -p export
-for doc in lastenheft pflichtenheft; do
-  # Kopfblock (H1 + Zeilen darunter) und die kursiven Bildunterschriften entfernen:
-  # Titel kommt aus den Metadaten, Bildunterschriften aus dem Alt-Text der Bilder.
-  awk 'BEGIN{skip=0} /^# /&&!done{skip=1;done=1;next} skip&&/^## /{skip=0} !skip && !/^\*Abbildung/' "$doc.md" |
-  pandoc - \
-    --from markdown \
-    --shift-heading-level-by=-1 \
-    --reference-doc=vorlage/reference.docx \
-    --resource-path=. \
-    --toc --toc-depth=3 \
-    -o "export/$doc.docx"
-  echo "export/$doc.docx erstellt"
-done
+python3 build_docx.py lastenheft pflichtenheft
 if [[ "${1:-}" == "--pdf" ]]; then
   SOFFICE=$(command -v soffice || echo /Applications/LibreOffice.app/Contents/MacOS/soffice)
   "$SOFFICE" --headless --convert-to pdf --outdir export export/*.docx
