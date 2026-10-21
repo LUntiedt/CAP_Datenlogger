@@ -46,4 +46,5 @@ Analyse der Gangperiodizität.
 ## Dokumente als Word/PDF
 
 Lasten- und Pflichtenheft werden in Markdown gepflegt. Word-Dateien erzeugt
-`docs/spec/export.sh` (benötigt `pandoc`, für PDF zusätzlich LibreOffice).
+`docs/spec/export.sh` im Layout der Originalvorlagen (benötigt `pandoc` und `python3`,
+für PDF zusätzlich LibreOffice; siehe ADR 0003).

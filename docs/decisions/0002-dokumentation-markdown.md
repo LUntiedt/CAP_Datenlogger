@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Status** | angenommen |
+| **Status** | angenommen; Punkt Export-Vorlage ersetzt durch 0003 |
 | **Datum** | 19.10.2026 |
 | **AP** | AP0 |
 | **Beteiligt** | Laurenz Untiedt |

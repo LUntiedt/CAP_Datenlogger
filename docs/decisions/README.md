@@ -13,4 +13,5 @@ Regeln:
 | Nr. | Titel | Status | AP |
 |---|---|---|---|
 | 0001 | [Mikrocontroller nRF54L15](0001-mcu-nrf54l15.md) | angenommen (Datenvergleich offen) | AP2 |
-| 0002 | [Dokumentation in Markdown](0002-dokumentation-markdown.md) | angenommen | AP0 |
+| 0002 | [Dokumentation in Markdown](0002-dokumentation-markdown.md) | angenommen; Export-Vorlage ersetzt durch 0003 | AP0 |
+| 0003 | [Word-Export über build_docx.py](0003-word-export-build-docx.md) | angenommen | AP0 |

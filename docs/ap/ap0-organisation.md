@@ -60,3 +60,4 @@ Repository-Struktur erstellt und auf GitHub angelegt; APs verteilt und Namen ein
 - 19.10.2026: Repository-Struktur angelegt.
 - 21.10.2026: Teammitglieder eingetragen, Repository auf GitHub, Lasten- und Pflichtenheft auf 0.2.
 - 21.10.2026: KiCad-Version 10.0.x festgelegt.
+- 21.10.2026: Word-Export auf `build_docx.py` mit Originalvorlagen umgestellt (ADR 0003).
