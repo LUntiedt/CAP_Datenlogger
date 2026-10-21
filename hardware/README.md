@@ -2,7 +2,7 @@
 
 KiCad-Projekt des Datenloggers. Regeln: `AGENTS.md` Abschnitt 7.
 
-**KiCad-Version:** [in AP0 festlegen] – alle nutzen dieselbe Hauptversion.
+**KiCad-Version:** KiCad 10.0.x (alle bleiben bei 10.0, kein Wechsel auf eine neue Hauptversion während des Projekts).
 
 ## Aufbau
 

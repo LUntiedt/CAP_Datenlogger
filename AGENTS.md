@@ -111,7 +111,7 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
 
 ## 7. Hardware (KiCad)
 
-- **Einheitliche KiCad-Version:** `[in AP0 festlegen, z. B. 9.0.x]`. Dateien, die mit
+- **Einheitliche KiCad-Version:** KiCad 10.0.x (alle bleiben bei 10.0, kein Wechsel auf eine neue Hauptversion während des Projekts). Dateien, die mit
   einer neueren Version gespeichert wurden, öffnen ältere Versionen nicht.
 - **Ein Projekt, ein Schaltplanblatt pro Block:**
 

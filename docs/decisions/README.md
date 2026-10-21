@@ -12,5 +12,5 @@ Regeln:
 
 | Nr. | Titel | Status | AP |
 |---|---|---|---|
-| 0001 | [Mikrocontroller nRF54L15](0001-mcu-nrf54l15.md) | angenommen, Begründung unvollständig | AP2 |
+| 0001 | [Mikrocontroller nRF54L15](0001-mcu-nrf54l15.md) | angenommen (Datenvergleich offen) | AP2 |
 | 0002 | [Dokumentation in Markdown](0002-dokumentation-markdown.md) | angenommen | AP0 |

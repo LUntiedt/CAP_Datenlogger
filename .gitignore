@@ -40,4 +40,6 @@ docs/spec/export/
 .idea/
 .DS_Store
 Thumbs.db
+# von der Claude-Desktop-App angelegt, darf nie ins Repo
+Claude outputs/
 *.log

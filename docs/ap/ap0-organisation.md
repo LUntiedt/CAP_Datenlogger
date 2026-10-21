@@ -20,8 +20,8 @@ gemeinsamen Repository.
 - [x] Repository anlegen (vorerst GitHub: https://github.com/LUntiedt/CAP_Datenlogger, später ggf. GitLab der TH), `main` schützen (MR/PR + 1 Approval)
 - [ ] Alle Mitglieder zum Repository hinzufügen
 - [ ] Klären, ob und in welchem Umfang **Git LFS** auf GitHub genutzt werden kann (Kontingent des Kontos) → Ergebnis in `.gitattributes` umsetzen (siehe Kommentar dort)
-- [ ] **KiCad-Version** festlegen und in `AGENTS.md` Abschnitt 7 eintragen
-- [ ] **nRF-Connect-SDK-Version** festlegen und in `AGENTS.md` Abschnitt 8 eintragen
+- [x] **KiCad-Version** festlegen und in `AGENTS.md` Abschnitt 7 eintragen
+- [ ] **nRF-Connect-SDK-Version** festlegen und in `AGENTS.md` Abschnitt 8 eintragen (wählt AP2 beim Kickoff: neueste stabile Version in der VS-Code-Erweiterung)
 - [ ] Jede/r: KiCad, nRF Connect for VS Code, Git, Python installieren; Repo klonen; Firmware-Skelett für das DK bauen (`firmware/README.md`)
 - [ ] O7 klären: Termine des Capstone-Projekts → Meilensteindaten in Lastenheft 8 und `STATUS.md`
 - [ ] Lasten- und Pflichtenheft gemeinsam lesen, Anmerkungen per MR/PR, Freigabe durch Prof. Cremer (M0)
@@ -59,3 +59,4 @@ Repository-Struktur erstellt und auf GitHub angelegt; APs verteilt und Namen ein
 
 - 19.10.2026: Repository-Struktur angelegt.
 - 21.10.2026: Teammitglieder eingetragen, Repository auf GitHub, Lasten- und Pflichtenheft auf 0.2.
+- 21.10.2026: KiCad-Version 10.0.x festgelegt.
