@@ -1,8 +1,8 @@
-# 0004 – Speicher: SPI-NOR oder SPI-NAND
+# 0004 – Speichertechnologie: SPI-NOR oder SPI-NAND
 
 | | |
 |---|---|
-| **Status** | vorgeschlagen (Entwurf, Bewertung offen) |
+| **Status** | vorgeschlagen (Entwurf: Technologievergleich; Bauteilauswahl erst nach Klärung der Rahmenbedingungen) |
 | **Datum** | 22.10.2026 |
 | **AP** | AP3 |
 | **Beteiligt** | Jan Thiedmann |
@@ -29,21 +29,32 @@ Randbedingungen:
   zählt also über die gesamte Laufzeit.
 - **NF4:** Ein Spannungseinbruch darf gespeicherte Daten nicht unbrauchbar machen.
 
-## Grundsätzliche Unterschiede
+**Vorgehen** (AGENTS.md §6): Solange die Rahmenbedingungen von Prof. Cremer fehlen
+(Aufzeichnungsdauer, Batterielaufzeit, Größe und Gewicht, Abtastrate), vergleicht dieser
+ADR nur die **Technologien**. Konkrete Bauteile mit vollständiger MPN und Verfügbarkeit
+bei Mouser/DigiKey folgen, wenn die Rahmenbedingungen geklärt sind.
 
-Qualitativ; Zahlen stehen in den Kandidatentabellen mit Quelle.
+## Technologievergleich
+
+Qualitativ; die Größenordnungen stammen aus den Datenblattbeispielen weiter unten.
 
 | Kriterium | SPI-NOR | SPI-NAND |
 |---|---|---|
-| Typische Kapazität | klein bis mittel | groß |
-| Schreiben/Löschen | seitenweise schreiben, sektorweise (4 KB) löschen | seitenweise schreiben, nur blockweise (128 KB) löschen |
-| Fehlerbehandlung | keine nötig | ECC und Verwaltung defekter Blöcke (Bad Blocks) nötig; bei allen drei Kandidaten ECC im Chip |
-| Nutzbare Kapazität | Nennkapazität | Nennkapazität abzüglich ungültiger Blöcke (garantiert sind mindestens 1004 von 1024) |
-| Ruhezustand | Power-down-Modus | bei allen drei Kandidaten kein Power-down-Modus im Datenblatt, niedrigster Zustand ist Standby |
+| Kapazität | klein bis mittel (Beispiele: 8–32 MiB) | groß (Beispiele: 1 Gbit) |
+| Schreiben/Löschen | seitenweise (256 B) schreiben, sektorweise (4 KB) löschen | seitenweise (2 KB) schreiben, nur blockweise (128 KB) löschen |
+| Fehlerbehandlung | keine nötig | ECC und Verwaltung defekter Blöcke (Bad Blocks) nötig; bei den Beispielen ECC im Chip |
+| Nutzbare Kapazität | Nennkapazität | Nennkapazität abzüglich ungültiger Blöcke (bei den Beispielen mindestens 1004 von 1024 garantiert) |
+| Ruhezustand | Power-down-Modus, typ. 0,007–1 µA | bei den Beispielen kein Power-down-Modus, niedrigster Zustand ist Standby (typ. 10–15 µA) |
+| Versorgungsspannung | auch Typen mit weitem Bereich (Beispiel: 1,65–3,6 V), die direkt an einer Lithium-Knopfzelle laufen | Beispiele nur als 1,8-V- oder 3-V-Typ; [offen: gibt es NAND mit weitem Bereich?] |
+| Schreibzeit je Seite | ms-Bereich für 256 B | µs-Bereich für 2 KB |
 | Zephyr-Unterstützung | generischer Treiber `jedec,spi-nor` vorhanden | [offen: prüfen, ob es in der verwendeten NCS-Version einen Treiber gibt; sonst eigener Treiber] |
 | Firmware-Aufwand | gering | höher (Bad-Block-Tabelle, ECC-Status auswerten, größere Löschblöcke im Datenformat berücksichtigen) |
 
-## Kandidaten
+## Datenblattbeispiele (vorläufig, keine Kandidatenliste)
+
+Die folgenden Bausteine sind **Beispiele**, um die Größenordnungen im Technologievergleich
+zu belegen. Sie sind keine Kandidaten: Gehäusevariante, vollständige MPN und Verfügbarkeit
+sind bewusst noch nicht festgelegt.
 
 Datenblätter liegen unter [`docs/datasheets/`](../datasheets/). **Seitenangaben sind
 die im Datenblatt gedruckten Seitenzahlen** (bei Winbond eins weniger als die
@@ -67,8 +78,8 @@ Standby/Power-down bei Industrial-Temperaturbereich bis 85 °C.
 | Zeit Sektor (4 KB) löschen | 58 / 240 ms (S. 75) | 45 / 400 ms (S. 64) | 50 / 400 ms (S. 84) |
 | Seitengröße / Sektorgröße | 256 B (S. 50) / 4 KB (S. 6) | 256 B / 4 KB (S. 4) | 256 B / 4 KB (S. 5) |
 | Aufwachzeit aus Power-down | tRDP 35 µs (S. 68) | tRES1 max. 30 µs (S. 64) | tRES1 max. 30 µs (S. 84) |
-| Gehäuse | 8-WSON 6×5 mm, 8-USON 4×4 mm und 4×3 mm, 8-SOP 200 mil, 22-WLCSP (S. 5) | u. a. 8-USON 4×3 mm, 8-XSON 4×4 mm, 8-WSON 6×5/8×6 mm, 24-TFBGA 8×6 mm (S. 4) | 8-WSON 6×5/8×6 mm, 24-TFBGA 8×6 mm (S. 5) |
-| Bemerkung | Werte für Ultra-Low-Power-Modus (Werkseinstellung laut Bestellcode „…IL0“, S. 77); typ. bei 1,8 V. Im Zephyr-Boardfile des nRF54L15 DK als `jedec,spi-nor` eingetragen (siehe Folgen) | typ. bei 1,8 V | typ. bei 1,8 V |
+| Gehäuse | im Ultra-Low-Power-Modus (`…IL0`): 8-SOP 200 mil, 8-WSON 6×5 mm, 8-USON 4×4 mm, 22-WLCSP. 8-USON 4×3 mm nur als `MX25R6435FZBIH3` (High-Performance-Modus, HOLD# statt RESET#) (S. 77) | u. a. 8-USON 4×3 mm, 8-XSON 4×4 mm, 8-WSON 6×5/8×6 mm, 24-TFBGA 8×6 mm (S. 4) | 8-WSON 6×5/8×6 mm, 24-TFBGA 8×6 mm (S. 5) |
+| Bemerkung | Ströme und Zeiten für den Ultra-Low-Power-Modus (Bestellcodes `…IL0`, S. 77); typ. bei 1,8 V. Im Zephyr-Boardfile des nRF54L15 DK als `jedec,spi-nor` eingetragen (siehe Folgen) | typ. bei 1,8 V | typ. bei 1,8 V |
 
 ### SPI-NAND
 
@@ -90,19 +101,19 @@ Standby/Power-down bei Industrial-Temperaturbereich bis 85 °C.
 | Gehäuse | 8-WSON 8×6 mm, 16-SOIC 300 mil, 24-TFBGA 8×6 mm (S. 7) | 8-WSON 8×6 mm, 16-SOIC 300 mil, 24-TFBGA 8×6 mm (S. 7) | 8-WSON 8×6 mm (S. 6) |
 | Bemerkung | typ. bei 1,8 V | typ. bei 3,0 V | 1,8-V-Variante GD5F1GQ5RE existiert, Datenblatt nicht geladen |
 
-## Erste Beobachtungen
+## Beobachtungen aus den Beispielen
 
 Nur aus den Tabellen oben abgeleitet, noch keine Wertung:
 
-1. **Spannung:** Nur der MX25R6435F deckt mit 1,65–3,6 V den Bereich einer Lithium-Knopfzelle
-   ab. Die 1,8-V-Typen (W25Q64JW, W25Q256JW, W25N01GW) brauchen einen eigenen Spannungsregler.
+1. **Spannung:** Unter den Beispielen deckt nur der MX25R6435F mit 1,65–3,6 V den Bereich
+   einer Lithium-Knopfzelle ab. Die 1,8-V-Typen (W25Q64JW, W25Q256JW, W25N01GW) brauchen einen eigenen Spannungsregler.
    Die 3-V-Typen (W25N01GV, GD5F1GQ5UE) verlangen mindestens 2,7 V; ob das bis zur
    Entladeschlussspannung der Zelle reicht, hängt an AP1.
-2. **Ruhestrom:** Die NAND-Kandidaten haben keinen Power-down-Modus. Ihr Standby-Strom
+2. **Ruhestrom:** Die NAND-Beispiele haben keinen Power-down-Modus. Ihr Standby-Strom
    (typ. 10–15 µA, max. 50 µA) liegt um Größenordnungen über dem Power-down-Strom der
-   NOR-Kandidaten und fließt über die ganze Aufnahme. Eine Möglichkeit wäre, den Speicher
+   NOR-Beispiele und fließt über die ganze Aufnahme. Eine Möglichkeit wäre, den Speicher
    zwischen den Schreibvorgängen über einen Lastschalter abzuschalten (mit AP1 klären).
-3. **Kapazität:** Die NOR-Kandidaten haben 8 oder 32 MiB, die NAND-Kandidaten 1 Gbit,
+3. **Kapazität:** Die NOR-Beispiele haben 8 oder 32 MiB, die NAND-Beispiele 1 Gbit,
    davon mindestens 1004 von 1024 Blöcken nutzbar. Die nutzbare NAND-Kapazität gehört
    noch in `budget.py`.
 4. **Schreibenergie:** NAND schreibt eine 2-KB-Seite in 250–700 µs, NOR eine 256-B-Seite
@@ -110,9 +121,15 @@ Nur aus den Tabellen oben abgeleitet, noch keine Wertung:
 
 ## Bewertung
 
-[offen: erst nach den Zielwerten aus AP0 und dem Spannungsbereich aus AP1.
-Vorgehen: Mindestkapazität aus `budget.py` → Kandidaten mit passendem Spannungsbereich
-→ Energie je geschriebenem Byte und Ruhestrom im Energiebudget → Firmware-Aufwand.]
+[offen: erst nach den Rahmenbedingungen von Prof. Cremer (AP0/O3) und dem Spannungsbereich
+der Zelle (AP1). Vorgehen:
+
+1. Mindestkapazität aus `budget.py` → Technologie (NOR, NAND oder NOR mit Datenreduktion, F11).
+2. Energie je geschriebenem Byte und Ruhestrom im Energiebudget (AP1).
+3. Dann konkrete Kandidaten der gewählten Technologie mit vollständiger MPN, passendem
+   Spannungsbereich und Gehäuse sowie Verfügbarkeit bei Mouser/DigiKey (Lagerbestand,
+   Preis, Stand Datum).
+4. Firmware-Aufwand (Treiber).]
 
 ## Entscheidung
 
