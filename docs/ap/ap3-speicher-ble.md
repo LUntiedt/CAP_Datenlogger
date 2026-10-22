@@ -59,7 +59,7 @@ Forschungsfragen aus der Themenbeschreibung, die hier beantwortet werden:
 
 ## Ergebnisse
 
-- Entscheidung Speicher: `docs/decisions/` (noch offen)
+- Entscheidung Speicher: [`docs/decisions/0004-speicher.md`](../decisions/0004-speicher.md) (Entwurf)
 - Datenformat: `docs/architecture/datenformat.md`
 - BLE-Protokoll: `docs/architecture/ble-protokoll.md`
 - Schaltplan: `hardware/memory.kicad_sch`
@@ -67,12 +67,17 @@ Forschungsfragen aus der Themenbeschreibung, die hier beantwortet werden:
 
 ## Stand
 
-Nicht begonnen.
+Vergleich SPI-NOR/SPI-NAND als ADR-Entwurf 0004 angelegt: je drei Kandidaten mit Datenblattwerten und Seitenangaben, Datenblätter unter `docs/datasheets/`. Bewertung wartet auf Zielwerte (AP0) und Spannungsbereich der Zelle (AP1).
 
 ## Offene Fragen
 
-- 
+- Laut Zephyr-Boardfile (main) hat das nRF54L15 DK einen MX25R6435F. In der NCS-Version und am DK im Labor bestätigen.
+- Die NAND-Kandidaten haben keinen Power-down-Modus (Standby typ. 10–15 µA). Mit AP1 klären, ob der Speicher über einen Lastschalter abgeschaltet werden soll.
+- Nutzbare NAND-Kapazität (mind. 1004 von 1024 Blöcken) in `budget.py` übernehmen.
+- Gibt es in der verwendeten NCS-Version einen Zephyr-Treiber für SPI-NAND? Hängt an der NCS-Version (AP0).
+- Welchen Spannungsbereich muss der Speicher abdecken? Wartet auf die Zellauswahl (AP1).
 
 ## Log
 
-- 
+- 22.10.2026: ADR-Entwurf 0004 (Speicher) mit Kandidatentabellen angelegt.
+- 22.10.2026: Datenblätter der sechs Kandidaten abgelegt, Werte mit Seitenzahl in ADR 0004 eingetragen.
