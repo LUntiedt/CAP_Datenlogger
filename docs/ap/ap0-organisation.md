@@ -61,3 +61,4 @@ Repository-Struktur erstellt und auf GitHub angelegt; APs verteilt und Namen ein
 - 21.10.2026: Teammitglieder eingetragen, Repository auf GitHub, Lasten- und Pflichtenheft auf 0.2.
 - 21.10.2026: KiCad-Version 10.0.x festgelegt.
 - 21.10.2026: Word-Export auf `build_docx.py` mit Originalvorlagen umgestellt (ADR 0003).
+- 22.10.2026: Ruleset für `main` auf 1 Approval gesetzt (vorher 0, Admin-Bypass bleibt). Regel für Bauteilkandidaten (MPN, Verfügbarkeit) in AGENTS.md §6. Einladungen an Simon und Peter noch offen.

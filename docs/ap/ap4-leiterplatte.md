@@ -16,7 +16,7 @@ gefertigt, bestückt und in Betrieb genommen.
 
 ### Bis M1 – Vorbereitung
 
-- [ ] KiCad-Projekt `hardware/datenlogger.kicad_pro` anlegen, hierarchische Blätter `power`, `digital`, `memory` einbinden, Bibliothekstabellen prüfen (`hardware/README.md`)
+- [x] KiCad-Projekt `hardware/datenlogger.kicad_pro` anlegen, hierarchische Blätter `power`, `digital`, `memory` einbinden, Bibliothekstabellen prüfen (`hardware/README.md`)
 - [ ] Fertiger festlegen (Unterstützung durch das Labor klären) und dessen Designregeln/Lagenaufbau als DRC-Regeln hinterlegen
 - [ ] Mit AP2 Antennenkonzept entscheiden (Modul vs. Chip-Antenne) und Freiraum im Layout vorsehen
 - [ ] Mit AP1/AP5 Platinenumriss und Zellenhalter festlegen
@@ -49,12 +49,13 @@ gefertigt, bestückt und in Betrieb genommen.
 
 ## Stand
 
-Nicht begonnen.
+KiCad-Projekt (10.0) mit Root-Blatt und den Blättern `power`, `digital`, `memory` angelegt. Projektbibliotheken auf `00_CAP_*` umbenannt, gemeinsame Bibliothek `00_CAP_Common_SYM` aus dem PowerBank-Projekt übernommen, Ablauf zum Anlegen von Bauteilen in `hardware/README.md` beschrieben (PR #2).
 
 ## Offene Fragen
 
 - Fertiger und Bestückung über das Labor?
+- `00_CAP_Common_SYM` enthält auch PowerBank-spezifische Teile (ESP32-C3, BQ25792, FUSB302 …). Aussortieren, sobald klar ist, was im Datenlogger gebraucht wird. Beim CSD17581Q3A fehlt im Footprint-Feld der Bibliotheksname, ein Symbol hat keinen Footprint.
 
 ## Log
 
-- 
+- 22.10.2026: KiCad-Projekt mit hierarchischen Blättern angelegt, Bibliotheken auf `00_CAP_*` umbenannt, Bauteil-Ablauf ins Hardware-README (PR #2).
