@@ -59,3 +59,4 @@ KiCad-Projekt (10.0) mit Root-Blatt und den Blättern `power`, `digital`, `memor
 ## Log
 
 - 22.10.2026: KiCad-Projekt mit hierarchischen Blättern angelegt, Bibliotheken auf `00_CAP_*` umbenannt, Bauteil-Ablauf ins Hardware-README (PR #2).
+- 22.10.2026: Einstieg für AP1–AP3 ins Hardware-README (Projekt öffnen, KiCad-Werkzeuge, hierarchische Labels, Annotation, Schaltplan-Tipps).
