@@ -1,4 +1,4 @@
 (fp_lib_table
   (version 7)
-  (lib (name "CAP")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP.pretty")(options "")(descr "Projekt-Footprints"))
+  (lib (name "00_CAP_FTP")(type "KiCad")(uri "${KIPRJMOD}/lib/00_CAP_FTP.pretty")(options "")(descr "Projekt-Footprints"))
 )

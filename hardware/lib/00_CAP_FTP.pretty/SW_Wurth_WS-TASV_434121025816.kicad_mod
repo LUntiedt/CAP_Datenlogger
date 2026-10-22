@@ -1,0 +1,206 @@
+(footprint "SW_Wurth_WS-TASV_434121025816"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SMT Tact Switch 6.0x3.8 mm, body 6x3.8x2.5mm, https://www.we-online.com/en/components/products/datasheet/434121025816?ki")
+	(tags "SMT")
+	(property "Reference" "REF**"
+		(at 0 -3.15 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "de4c1de3-18f7-48b2-aea3-836a8842838a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SW_Wurth_WS-TASV_434121025816"
+		(at 0 3.15 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "280e18e3-2322-4711-ad63-9b38dafac6a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2aafd4e5-d486-42c7-bf48-f0531b00ad03")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "50a4c9e0-142a-4f35-985c-103fcc5f9259")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.11 2.01)
+		(end -3.11 0.96)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5fbaae20-8664-467b-8514-91b736b12ae2")
+	)
+	(fp_line
+		(start -3.11 2.01)
+		(end 3.11 2.01)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1afbb15a-2662-4562-ac42-d5367acfa3e2")
+	)
+	(fp_line
+		(start 0 -2.01)
+		(end 3.11 -2.01)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c1aa1ce8-d6ad-4c0a-8212-e0bc8b9648a8")
+	)
+	(fp_line
+		(start 3.11 -2.01)
+		(end 3.11 -0.96)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9936817c-1e3f-4a06-afae-c171eca5475a")
+	)
+	(fp_line
+		(start 3.11 2.01)
+		(end 3.11 0.96)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4eedb625-0c29-4b47-89b9-2a7edcd03f4c")
+	)
+	(fp_rect
+		(start -4.25 -2.15)
+		(end 4.25 2.15)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "9eb4b1f4-c7b6-426f-a57d-1a4959133260")
+	)
+	(fp_line
+		(start -3 -0.95)
+		(end -3 1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "24d238f5-c777-4050-84be-9e7eb466d960")
+	)
+	(fp_line
+		(start -3 1.9)
+		(end 3 1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f4399e37-b301-46ce-8c2b-476e5371e4d7")
+	)
+	(fp_line
+		(start -2.05 -1.9)
+		(end -3 -0.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2f1ca252-8269-4be7-a401-f34f20be4f1f")
+	)
+	(fp_line
+		(start 3 -1.9)
+		(end -2.05 -1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "65a6d8f9-bb61-48aa-ada4-d318cb7fce81")
+	)
+	(fp_line
+		(start 3 1.9)
+		(end 3 -1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c811749c-5ba7-4fd8-ae57-3d956e9ee8b0")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "d5e6977a-278c-42c1-a4e5-f8c4f36098e3")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -3.25 0)
+		(size 1.5 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(uuid "560f67ae-8e8b-43c2-a391-c07685475f9e")
+	)
+	(pad "2" smd roundrect
+		(at 3.25 0)
+		(size 1.5 1.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(uuid "7af26e13-3464-481f-a798-fb0361135b7c")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/00_CAP_3D/SW_Wurth_WS-TASV_434121025816.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

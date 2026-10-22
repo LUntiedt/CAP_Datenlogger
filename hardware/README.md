@@ -14,14 +14,15 @@ hardware/
 ├── digital.kicad_sch          AP2 Sensor und Mikrocontroller
 ├── memory.kicad_sch           AP3 Speicher
 ├── datenlogger.kicad_pcb      Layout (AP4)
-├── sym-lib-table              bindet lib/CAP_*.kicad_sym über ${KIPRJMOD} ein
-├── fp-lib-table               bindet lib/CAP.pretty über ${KIPRJMOD} ein
-├── lib/
-│   ├── CAP_Power.kicad_sym    Symbole AP1
-│   ├── CAP_Digital.kicad_sym  Symbole AP2
-│   ├── CAP_Memory.kicad_sym   Symbole AP3
-│   ├── CAP.pretty/            Footprints (eine Datei pro Footprint, gemeinsam)
-│   └── 3d/                    3D-Modelle (STEP)
+├── sym-lib-table              bindet lib/00_CAP_*_SYM.kicad_sym über ${KIPRJMOD} ein
+├── fp-lib-table               bindet lib/00_CAP_FTP.pretty über ${KIPRJMOD} ein
+├── lib/                       Präfix 00_ sortiert die Projektbibliotheken in KiCad nach oben
+│   ├── 00_CAP_3D/                     3D-Modelle (STEP), gemeinsam
+│   ├── 00_CAP_FTP.pretty/             Footprints (eine Datei pro Footprint, gemeinsam)
+│   ├── 00_CAP_Common_SYM.kicad_sym    gemeinsame Bauteile: Passive, Stecker, Taster (AP4)
+│   ├── 00_CAP_Power_SYM.kicad_sym     Symbole AP1
+│   ├── 00_CAP_Digital_SYM.kicad_sym   Symbole AP2
+│   └── 00_CAP_Memory_SYM.kicad_sym    Symbole AP3
 ├── bom/                       Stückliste mit Bezugsquellen
 ├── production/vX.Y/           Fertigungsdaten, nur bei Freigabe
 └── enclosure/                 Gehäuse (AP5)
@@ -38,8 +39,9 @@ hardware/
 
 ## Bauteile anlegen
 
-- Symbol in die eigene Bibliothek `CAP_<Block>`, Footprint in `CAP.pretty`,
-  3D-Modell nach `lib/3d/` und im Footprint über `${KIPRJMOD}/lib/3d/<datei>.step` verknüpfen.
+- Erst in `00_CAP_Common_SYM` nachsehen, ob es das Bauteil schon gibt (Würth-Passive u. a.).
+- Sonst Symbol in die eigene Bibliothek `00_CAP_<Block>_SYM`, Footprint in `00_CAP_FTP.pretty`,
+  3D-Modell nach `lib/00_CAP_3D/` und im Footprint über `${KIPRJMOD}/lib/00_CAP_3D/<datei>.step` verknüpfen.
 - Felder pflegen: Hersteller, Hersteller-Nr., Datenblatt-Link.
 - Footprints aus Herstellerquellen gegen die Maßzeichnung im Datenblatt prüfen.
 

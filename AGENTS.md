@@ -121,15 +121,17 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
 
   | Blatt | Inhalt | Verantwortlich | Symbolbibliothek |
   |---|---|---|---|
-  | `power.kicad_sch` | Zelle, Pufferung, Messshunt, Testpunkte | AP1 (Simon Schiefer) | `lib/CAP_Power.kicad_sym` |
-  | `digital.kicad_sch` | nRF54L15, Sensor, Antenne, Weckquelle, Quarz, SWD | AP2 (Peter Wienken, Erik Bremersmann) | `lib/CAP_Digital.kicad_sym` |
-  | `memory.kicad_sch` | Flash-Speicher | AP3 (Jan Thiedmann) | `lib/CAP_Memory.kicad_sym` |
+  | `power.kicad_sch` | Zelle, Pufferung, Messshunt, Testpunkte | AP1 (Simon Schiefer) | `lib/00_CAP_Power_SYM.kicad_sym` |
+  | `digital.kicad_sch` | nRF54L15, Sensor, Antenne, Weckquelle, Quarz, SWD | AP2 (Peter Wienken, Erik Bremersmann) | `lib/00_CAP_Digital_SYM.kicad_sym` |
+  | `memory.kicad_sch` | Flash-Speicher | AP3 (Jan Thiedmann) | `lib/00_CAP_Memory_SYM.kicad_sym` |
   | Root-Blatt + `.kicad_pcb` | Zusammenführung, Layout | AP4 (Laurenz Untiedt) | – |
 
 - **Bibliotheken projektlokal** unter `hardware/lib/`, eingebunden über `${KIPRJMOD}`
   in `sym-lib-table`/`fp-lib-table`. Keine Bauteile aus persönlichen Bibliotheken.
-  Footprints liegen gemeinsam in `lib/CAP.pretty/` (eine Datei pro Footprint),
-  3D-Modelle in `lib/3d/`.
+  Footprints liegen gemeinsam in `lib/00_CAP_FTP.pretty/` (eine Datei pro Footprint),
+  3D-Modelle in `lib/00_CAP_3D/`. Gemeinsame Bauteile (Passive, Stecker, Taster) in
+  `lib/00_CAP_Common_SYM.kicad_sym`, gepflegt von AP4. Präfix `00_` sortiert die
+  Projektbibliotheken in KiCad nach oben.
 - **Review:** Jedes Schaltplanblatt, jede Bibliotheksänderung und das Layout gehen per MR/PR
   an AP4 (Laurenz Untiedt).
 - **Fertigungsdaten** (Gerber, Bohrdaten, Bestückdaten, BOM) nur bei Freigabe unter
