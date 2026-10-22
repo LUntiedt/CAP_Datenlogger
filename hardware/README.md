@@ -28,6 +28,91 @@ hardware/
 └── enclosure/                 Gehäuse (AP5)
 ```
 
+## Einstieg für AP1–AP3
+
+### Was ist jetzt dran?
+
+Für AP1, AP2 und AP3 stehen zuerst **Schaltplan und Bauteilpflege** an: die eigenen
+Bauteile anlegen (siehe [Bauteile anlegen](#bauteile-anlegen)) und das eigene
+Schaltplanblatt zeichnen. Das Layout (`datenlogger.kicad_pcb`) liegt bei AP4. Wer Lust hat,
+kann aber gerne Teile davon übernehmen, z. B. die Platzierung und das Routing des eigenen
+Blocks. Einfach bei Laurenz melden, dann teilen wir das in AP4 auf.
+
+### Projekt öffnen
+
+1. `git pull`, eigenen Branch anlegen (AGENTS.md §9), z. B. `hw/ap3-flash-schaltplan`.
+2. KiCad **10.0** starten → *Datei → Projekt öffnen* → **`hardware/datenlogger.kicad_pro`**.
+   Immer die Projektdatei öffnen, nicht die `.kicad_sch` direkt. Nur dann lädt KiCad die
+   Projektbibliotheken (`00_CAP_*`) und die Blatthierarchie.
+3. Im Schaltplaneditor das eigene Blatt öffnen: im Root-Blatt doppelt auf den Kasten
+   `Power` / `Digital` / `Memory` klicken oder links im Hierarchie-Navigator auswählen.
+4. Vor einem Branchwechsel oder `git pull` KiCad schließen. KiCad lädt geänderte Dateien
+   nicht neu und überschreibt sie sonst beim nächsten Speichern.
+
+### Was öffnet sich wo? (KiCad-Projektfenster)
+
+| Werkzeug | Bearbeitet | Wer |
+|---|---|---|
+| **Schaltplaneditor** | `datenlogger.kicad_sch` (Root) und die Blätter `power`/`digital`/`memory` | jede/r im eigenen Blatt, Root: AP4 |
+| **Symboleditor** | Symbole in `lib/00_CAP_*_SYM.kicad_sym` | jede/r in der eigenen Bibliothek |
+| **Leiterplatteneditor** (PCB) | `datenlogger.kicad_pcb` | AP4 (bzw. nach Absprache) |
+| **Footprint-Editor** | Footprints in `lib/00_CAP_FTP.pretty/` | jede/r, für die eigenen Bauteile |
+| Gerber-Viewer | fertige Gerberdateien ansehen | bei Freigabe |
+| Rechner für Leiterplatten | Leiterbahnbreiten, Spannungsteiler, E-Reihen usw. | bei Bedarf |
+| Bild-Konverter, Zeichnungsvorlagen-Editor | Logos, Schriftfeld-Vorlage | nicht nötig |
+| Plugin- und Inhaltsverwaltung | Erweiterungen installieren | nicht nötig |
+
+**Wichtig:** Im Schaltplaneditor *nicht* „Leiterplatte aus Schaltplan aktualisieren“ (F8)
+ausführen und keine Änderungen an der `.kicad_pcb` committen. Das macht AP4 beim
+Zusammenführen, sonst gibt es Konflikte in der Layoutdatei.
+
+### Verbindungen und Netznamen
+
+- **Lokale Labels und Drähte gelten nur auf dem eigenen Blatt.** Ein Label `SCK` auf
+  `memory` und ein Label `SCK` auf `digital` sind zwei verschiedene Netze. Netznamen auf dem
+  eigenen Blatt können also frei gewählt werden, ohne mit anderen Blättern zu kollidieren.
+- **Ausnahme Versorgungssymbole:** `GND`, `VDD`, `VBAT` usw. (Power-Symbole) sind
+  **global**, gleichnamige Power-Symbole sind auf allen Blättern verbunden. Namen der
+  Versorgungsnetze deshalb mit AP1/AP4 abstimmen, nicht eigene Varianten erfinden
+  (`3V3` vs. `+3.3V`).
+- **Signale zwischen Blättern** (z. B. SPI zwischen nRF54L15 auf `digital` und dem Flash
+  auf `memory`) laufen über die Hierarchie, **nur dann** braucht man das:
+  1. Im eigenen Blatt an das Signal ein **hierarchisches Label** setzen
+     (*Platzieren → Hierarchisches Label*, Taste `H`), z. B. `SPI_SCK`.
+  2. Im Root-Blatt erscheint dazu am Blattkasten ein **Blattanschluss** (Sheet Pin),
+     der über *Blattanschlüsse aus hierarchischen Labels importieren* übernommen wird.
+     Die Blattanschlüsse beider Blätter werden im Root-Blatt mit einem Draht verbunden.
+  3. Das Root-Blatt pflegt AP4. Im MR/PR deshalb angeben, welche hierarchischen Labels
+     neu sind und wohin sie sollen; AP4 verbindet sie im Root-Blatt. So arbeiten nicht
+     mehrere Leute gleichzeitig in derselben Datei.
+- **Keine globalen Labels** verwenden. Sie verbinden blattübergreifend „unsichtbar“ und
+  umgehen die Hierarchie, Fehler fallen dann erst spät auf.
+- Signalnamen: Großbuchstaben, Unterstrich, keine Umlaute, Funktion vor Nummer, aktiv-low
+  mit `_N` (z. B. `SPI_MOSI`, `ACC_INT1`, `FLASH_CS_N`).
+
+### Bauteilbezeichner (Annotation)
+
+Damit sich `R1` auf zwei Blättern nicht doppelt, beim Annotieren
+(*Werkzeuge → Schaltplan annotieren*) **„Erste freie Nummer nach Blattnummer × 100“**
+wählen. Dann bekommt `power` R201 ff., `digital` R301 ff., `memory` R401 ff.
+(Blattnummern: Root 1, Power 2, Digital 3, Memory 4).
+
+### Ein gutes Schaltplanblatt
+
+- Signalfluss von links nach rechts, Versorgung oben, Masse unten.
+- Funktionsgruppen räumlich zusammenfassen und mit einem Rahmen bzw. Text beschriften
+  („Entkopplung nRF54L15“, „SWD“), Hinweise für das Layout als Text dazuschreiben
+  (z. B. „C nah an Pin 12“).
+- Lieber Labels als lange, kreuzende Drähte; Drähte nur auf dem Raster.
+- Werte und MPN sichtbar bzw. im Feld `Manufacturer_Part_Number` gefüllt.
+- Schriftfeld ausfüllen (*Datei → Seiteneinstellungen*: Titel, Name, Datum, Revision).
+- Vor dem MR/PR: **ERC** (*Prüfen → Elektrische Regeln prüfen*) für das eigene Blatt ohne
+  ungeklärte Fehler. Bewusst ignorierte Warnungen im MR/PR begründen.
+- Anschauen: [Phil's Lab auf YouTube](https://www.youtube.com/@PhilsLab), v. a. das
+  zweiteilige KiCad-9-Tutorial (Teil 1: Schaltplan) und die Design-Reviews
+  (z. B. #70 „Design Review – Schematic & PCB“). Zeigt gut, wie ein aufgeräumtes
+  Schaltplanblatt aussieht. KiCad 9 und 10 unterscheiden sich dabei kaum.
+
 ## Projekt anlegen (einmalig, AP4)
 
 1. In KiCad *Neues Projekt* → Ordner `hardware/`, Name `datenlogger`.
