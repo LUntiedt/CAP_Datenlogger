@@ -61,7 +61,8 @@ Ablage: Symbol in die eigene Bibliothek `00_CAP_<Block>_SYM`, Footprint in
 
 **2. Symbol importieren, anpassen, gegenchecken**
 
-- Symboleditor → eigene Bibliothek `00_CAP_<Block>_SYM` auswählen → *Datei → Importieren → Symbol*.
+- Symboleditor → **zuerst links die eigene Bibliothek `00_CAP_<Block>_SYM` anklicken**, dann
+  *Datei → Importieren → Symbol*. Sonst landet das Symbol in der falschen Bibliothek.
 - Name = MPN.
 - Felder wie bei den vorhandenen Symbolen: `Manufacturer`, `Manufacturer_Part_Number`,
   `Datasheet` (Link zum Herstellerdatenblatt), `Description`. Gleiche Feldnamen sind wichtig,
@@ -73,12 +74,16 @@ Ablage: Symbol in die eigene Bibliothek `00_CAP_<Block>_SYM`, Footprint in
 
 **3. Footprint importieren, anpassen, gegenchecken**
 
-- Footprinteditor → `00_CAP_FTP` → *Datei → Importieren → Footprint* (die `.kicad_mod` aus dem Paket).
+- Footprinteditor → **zuerst links `00_CAP_FTP` anklicken**, dann *Datei → Importieren → Footprint*
+  (die `.kicad_mod` aus dem Paket).
 - Name = Gehäusebezeichnung oder MPN, wie bei den vorhandenen Footprints.
 - **Gegenchecken mit der Maßzeichnung bzw. dem empfohlenen Land Pattern im Datenblatt:**
   Pad-Größen, Rastermaß, Pad-Nummerierung (passt zur Pin-Nummer im Symbol), Lage von Pin 1,
   Exposed Pad inkl. Lötpastenaufteilung, Courtyard, Bestückungsdruck (Pin-1-Markierung,
   nicht auf Pads), Fab-Layer mit Referenz.
+- **SMD-Pads mit abgerundeten Ecken** (Padform „Rechteck, abgerundet“ / roundrect) statt
+  scharfkantiger Rechtecke, für bessere Fertigbarkeit. Importierte Footprints haben oft
+  eckige Pads, dann umstellen.
 
 **4. 3D-Modell importieren und mit dem Footprint verknüpfen**
 
