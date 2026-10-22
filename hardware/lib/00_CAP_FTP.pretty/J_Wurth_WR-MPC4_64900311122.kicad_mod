@@ -1,0 +1,212 @@
+(footprint "J_Wurth_WR-MPC4_64900311122"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "4.20 mm Male Single Row Vertical Header, body 13.8x6.9x16.3mm, https://www.we-online.com/en/components/products/datasheet/64900311122?ki")
+	(tags "THT")
+	(property "Reference" "REF**"
+		(at 4.2 -5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "f4a68f12-9422-4f0f-88b7-de8753514968")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "J_Wurth_WR-MPC4_64900311122"
+		(at 4.2 5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "745b59b5-ec83-462e-9289-22ef0ca98b4c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 4 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ea50efa7-1688-419f-a44b-745ff961943b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 4 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ad3534be-1ee4-4317-9b63-5cf7af552e70")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.285 -1.05)
+		(end -3.285 1.05)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6ffb42dc-b0fa-486d-b1fe-a5549cfb817d")
+	)
+	(fp_line
+		(start 2.39 3.46)
+		(end 2.39 1.96)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "736fc085-07c1-467e-89ae-20aca3f51e3b")
+	)
+	(fp_line
+		(start 6.01 1.96)
+		(end 6.01 3.46)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ca98a889-c5df-4e4e-912b-7798ef5b935e")
+	)
+	(fp_line
+		(start 6.01 3.46)
+		(end 2.39 3.46)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "8afe194d-aafe-497c-9e6e-fad40abe246e")
+	)
+	(fp_rect
+		(start -2.81 -3.66)
+		(end 11.21 1.96)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "deddeaf3-d25f-4eab-aa72-13ec7969b089")
+	)
+	(fp_rect
+		(start -3.2 -4.05)
+		(end 11.6 3.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "e7604791-4832-4c51-a5e0-ec72ecd357b7")
+	)
+	(fp_line
+		(start -1.95 0)
+		(end -2.7 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "23b17f02-4105-493a-8dc8-b2c856f38c57")
+	)
+	(fp_line
+		(start -1.95 0)
+		(end -2.7 0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2c3b738c-f723-4b6e-9230-f01c9b837ba2")
+	)
+	(fp_rect
+		(start -2.7 -3.55)
+		(end 11.1 1.85)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "7c7a17bc-5c76-4508-96f9-3f5b74c46d41")
+	)
+	(fp_rect
+		(start 2.5 1.85)
+		(end 5.9 3.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "1d68f552-760c-4520-9017-779dcd32a042")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 4.2 -0.85 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "830a98d8-64b8-493d-b0ec-a7abc9d01006")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0 180)
+		(size 2.1 2.1)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "34bf92a4-ba74-47f1-a5e8-a96b22659d74")
+	)
+	(pad "2" thru_hole circle
+		(at 4.2 0 180)
+		(size 2.1 2.1)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2b23ca99-b0e3-4ecd-baaf-cd1c3dfdfa27")
+	)
+	(pad "3" thru_hole circle
+		(at 8.4 0 180)
+		(size 2.1 2.1)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a120fadc-926a-4fc6-a053-dbba9ba442bd")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/00_CAP_3D/J_Wurth_WR-MPC4_64900311122.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

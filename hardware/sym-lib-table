@@ -1,6 +1,7 @@
 (sym_lib_table
   (version 7)
-  (lib (name "CAP_Power")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP_Power.kicad_sym")(options "")(descr "AP1 Energieversorgung"))
-  (lib (name "CAP_Digital")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP_Digital.kicad_sym")(options "")(descr "AP2 Sensor und Mikrocontroller"))
-  (lib (name "CAP_Memory")(type "KiCad")(uri "${KIPRJMOD}/lib/CAP_Memory.kicad_sym")(options "")(descr "AP3 Speicher"))
+  (lib (name "00_CAP_Common_SYM")(type "KiCad")(uri "${KIPRJMOD}/lib/00_CAP_Common_SYM.kicad_sym")(options "")(descr "Gemeinsame Bauteile (Passive, Stecker, Taster), AP4"))
+  (lib (name "00_CAP_Power_SYM")(type "KiCad")(uri "${KIPRJMOD}/lib/00_CAP_Power_SYM.kicad_sym")(options "")(descr "AP1 Energieversorgung"))
+  (lib (name "00_CAP_Digital_SYM")(type "KiCad")(uri "${KIPRJMOD}/lib/00_CAP_Digital_SYM.kicad_sym")(options "")(descr "AP2 Sensor und Mikrocontroller"))
+  (lib (name "00_CAP_Memory_SYM")(type "KiCad")(uri "${KIPRJMOD}/lib/00_CAP_Memory_SYM.kicad_sym")(options "")(descr "AP3 Speicher"))
 )

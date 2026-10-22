@@ -5,7 +5,7 @@
 | **Verantwortlich** | Jan Thiedmann |
 | **Zeitraum** | W1–W8 |
 | **Bezug** | F4, F5, F6, F7, F10, F11, NF4 · Pflichtenheft 3.2.1 (Speicher), 3.2.2 (Tabelle 2), 3.4, 3.6 |
-| **Schaltplanblatt** | `hardware/memory.kicad_sch` · Symbole in `hardware/lib/CAP_Memory.kicad_sym` |
+| **Schaltplanblatt** | `hardware/memory.kicad_sch` · Symbole in `hardware/lib/00_CAP_Memory_SYM.kicad_sym` |
 | **Firmware** | `firmware/src/drivers/` (Flash), `firmware/src/services/` (Datenablage, BLE) |
 | **Werkzeug** | `tools/readout/` (PC-Auslesewerkzeug) |
 
@@ -35,7 +35,7 @@ Forschungsfragen aus der Themenbeschreibung, die hier beantwortet werden:
 
 - [ ] `memory.kicad_sch`: Flash mit SPI, Abblockkondensatoren, ggf. Write-Protect/Hold-Beschaltung
 - [ ] Pinbelegung mit AP2 abstimmen
-- [ ] Symbole/Footprints in `CAP_Memory.kicad_sym` bzw. `CAP.pretty`; ERC ohne Fehler; MR/PR an AP4
+- [ ] Symbole/Footprints in `00_CAP_Memory_SYM.kicad_sym` bzw. `00_CAP_FTP.pretty`; ERC ohne Fehler; MR/PR an AP4
 
 ### Bis M3 – Firmware und Werkzeug (zuerst auf dem DK mit Breakout-Board)
 

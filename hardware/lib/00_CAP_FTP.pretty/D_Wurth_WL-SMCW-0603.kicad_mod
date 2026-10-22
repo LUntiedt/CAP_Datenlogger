@@ -1,0 +1,177 @@
+(footprint "D_Wurth_WL-SMCW-0603"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Mono-color Chip LED Waterclear, body 1.6x0.8x0.7mm, https://www.we-online.com/en/components/products/WL-SMCW#/articles/WL-SMCW-0603")
+	(tags "Architectural LED lighting")
+	(property "Reference" "REF**"
+		(at 0 -1.65 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "9265e338-6c2c-46f0-8377-980e2c8b6e1e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "D_Wurth_WL-SMCW-0603"
+		(at 0 1.65 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3f64bea2-d27f-44d1-821d-3e8e17f572ce")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a9cbd8e8-e6c4-4189-8ba8-f351f328c165")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9d50f7cb-95b1-4e59-9302-f823c59799ea")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 1.605 0)
+		(end 1.905 0)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "b3290f90-d5f2-4df3-a842-dfb3b5638d1a")
+	)
+	(fp_line
+		(start 1.755 -0.15)
+		(end 1.755 0.15)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "e2112b75-7abb-449e-a5e6-b84356fbbc8a")
+	)
+	(fp_rect
+		(start -1.45 -0.65)
+		(end 1.45 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "2d280560-d050-43e9-86ca-90adfac6fced")
+	)
+	(fp_line
+		(start -0.8 0)
+		(end -0.4 -0.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "6f1dcbe1-620f-4b06-a73b-f23da0b382be")
+	)
+	(fp_line
+		(start -0.277 0)
+		(end 0.231 -0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "0b59d96e-da49-447c-806e-f3f775d95aee")
+	)
+	(fp_line
+		(start 0.231 -0.381)
+		(end 0.231 0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "fbad4339-f2c5-4d43-a843-1fa23089b93b")
+	)
+	(fp_line
+		(start 0.231 0.381)
+		(end -0.277 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "5bc45af0-0ab7-4bac-8eb7-265b08e5803d")
+	)
+	(fp_rect
+		(start -0.8 -0.4)
+		(end 0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ecb79d00-fd54-472d-b3cd-6373be9b359a")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "970ad51b-01ad-4816-a553-93afa053492a")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.8 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+		(uuid "0ee53d93-90fb-4245-83c4-e21445d3d0c0")
+	)
+	(pad "2" smd roundrect
+		(at 0.8 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+		(uuid "42821ade-3e39-4827-9132-5bca960e7367")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/00_CAP_3D/D_Wurth_WL-SMCW-0603.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
