@@ -67,12 +67,12 @@ Forschungsfragen aus der Themenbeschreibung, die hier beantwortet werden:
 
 ## Stand
 
-Vergleich SPI-NOR/SPI-NAND als ADR-Entwurf 0004 angelegt: je drei Kandidaten mit Datenblattwerten und Seitenangaben, Datenblätter unter `docs/datasheets/`. Bewertung wartet auf Zielwerte (AP0) und Spannungsbereich der Zelle (AP1).
+ADR-Entwurf 0004 vergleicht SPI-NOR und SPI-NAND als Technologien, belegt mit je drei Datenblattbeispielen (Werte mit Seitenangaben, Datenblätter unter `docs/datasheets/`). Konkrete Kandidaten mit MPN und Verfügbarkeit erst nach den Rahmenbedingungen von Prof. Cremer (AP0/O3); Bewertung wartet außerdem auf den Spannungsbereich der Zelle (AP1).
 
 ## Offene Fragen
 
 - Laut Zephyr-Boardfile (main) hat das nRF54L15 DK einen MX25R6435F. In der NCS-Version und am DK im Labor bestätigen.
-- Die NAND-Kandidaten haben keinen Power-down-Modus (Standby typ. 10–15 µA). Mit AP1 klären, ob der Speicher über einen Lastschalter abgeschaltet werden soll.
+- Die NAND-Beispiele haben keinen Power-down-Modus (Standby typ. 10–15 µA). Mit AP1 klären, ob der Speicher über einen Lastschalter abgeschaltet werden soll.
 - Nutzbare NAND-Kapazität (mind. 1004 von 1024 Blöcken) in `budget.py` übernehmen.
 - Gibt es in der verwendeten NCS-Version einen Zephyr-Treiber für SPI-NAND? Hängt an der NCS-Version (AP0).
 - Welchen Spannungsbereich muss der Speicher abdecken? Wartet auf die Zellauswahl (AP1).
@@ -81,3 +81,4 @@ Vergleich SPI-NOR/SPI-NAND als ADR-Entwurf 0004 angelegt: je drei Kandidaten mit
 
 - 22.10.2026: ADR-Entwurf 0004 (Speicher) mit Kandidatentabellen angelegt.
 - 22.10.2026: Datenblätter der sechs Kandidaten abgelegt, Werte mit Seitenzahl in ADR 0004 eingetragen.
+- 22.10.2026: ADR 0004 nach Review (PR #1) auf Technologievergleich umgestellt, Bausteine nur noch als Datenblattbeispiele; Gehäuseangabe MX25R6435F korrigiert (USON 4×3 mm nur als ZBIH3).
