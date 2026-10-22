@@ -105,6 +105,10 @@ Abkürzung: `/ap-start <AP>` (Claude Code) bzw. „Führe `docs/prompts/ap-start
   erklären können. Die KI erklärt deshalb vor nicht trivialem Code bzw. Schaltungsteilen
   kurz die Logik und die Alternativen; nichts übernehmen, was man nicht erklären kann.
 - **Keine Anforderungen erfinden.** Unklares als offene Frage in die AP-Datei eintragen.
+- **Bauteilkandidaten** immer mit vollständiger MPN und Verfügbarkeit bei Mouser/DigiKey
+  (Lagerbestand, Stand Datum) angeben. Konkrete Bauteile erst vorschlagen, wenn die
+  zugehörigen Rahmenbedingungen (`STATUS.md` / AP0) geklärt sind; vorher nur Technologien
+  vergleichen.
 - **Nicht in fremden Bereichen arbeiten**, ohne es im MR/PR zu nennen (siehe Abschnitt 5).
 - **Diagramme im Pflichtenheft sind Entwürfe.** Abbildung 1 und 2 zeigen eine mögliche
   Umsetzung, keine Vorgabe. Verbindlich sind die Anforderungen und die ADRs.
